@@ -5,8 +5,8 @@ public class Client {
 	public static void main(String[] args) {
 		try {
 			Registry registry = LocateRegistry.getRegistry("localhost", 1236);
-			IProcessor processor = (IProcessor) registry.lookup("main");
-			System.out.println(processor.fibonacci(10));
+			IHello hello = (IHello) registry.lookup("hello");
+			System.out.println(hello.say());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
